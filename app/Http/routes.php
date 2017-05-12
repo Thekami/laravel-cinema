@@ -11,6 +11,9 @@
 |
 */
 
+Route::get('controlador', 'PruebaController@index');
+Route::get('nombre/{nombre}', 'PruebaController@nombre');
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -20,6 +23,10 @@ Route::get('prueba', function(){
 });
 
 
-Route::get('nombre/{nombre}', function($nombre){
-	 return "Mi nombre es {$nombre}";
-});
+// Route::get('nombre/{nombre}', function($nombre){
+// 	 return "Mi nombre es {$nombre}";
+// });
+
+
+// Controlador RESTFULL
+Route::resource('movie', 'Movie');
